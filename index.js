@@ -20,8 +20,16 @@ window.addEventListener("DOMContentLoaded", (event) => {
             i = i + 1;
         }
 
+        let headers = new Headers();
+
+        headers.append('Content-Type', 'application/json; harset=UTF-8');
+        headers.append('Accept', 'application/json');
+        headers.append('Origin','https://quiz-on.ru');
+
         fetch("https://quiz-on.ru/register", {
+            mode: 'cors',
             method: "POST",
+            headers: headers,
             body: JSON.stringify({
                 userId: 1,
                 captain_name: captain_name.value,
@@ -31,9 +39,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
                 team_size: team_size.value,
                 cpatain_name: captain_name.value,
             }),
-            headers: {
-                "Content-type": "application/json; charset=UTF-8"
-            }
         })
             .then((response) => response.json())
             .then((json) => console.log(json));
