@@ -13,7 +13,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
         let arr = [captain_name, group, phone, team_name, team_size, captain_name];
         let i = 0;
-        for (i < arr.length) {
+        while (i < arr.length) {
             if (arr[i].value == "") {
                 arr[i].style.borderColor="red"
             }
