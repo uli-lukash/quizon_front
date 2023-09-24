@@ -19,7 +19,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
             }
         }
 
-        fetch("http://localhost:8000/register", {
+        fetch("https://quiz-on.ru/register", {
             method: "POST",
             body: JSON.stringify({
                 userId: 1,
