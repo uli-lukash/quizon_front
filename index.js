@@ -15,7 +15,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
         let i = 0;
         while (i < arr.length) {
             if (arr[i].value == "") {
-                arr[i].style.borderColor="red"
+                arr[i++].style.borderColor="red"
             }
         }
 
