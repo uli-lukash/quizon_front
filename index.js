@@ -24,9 +24,9 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
         headers.append('Content-Type', 'application/json; harset=UTF-8');
         headers.append('Accept', 'application/json');
-        headers.append('Origin','https://quiz-on.ru');
+        headers.append('Origin','https://www.quiz-on.ru');
 
-        fetch("https://quiz-on.ru/register", {
+        fetch("https://www.quiz-on.ru/register", {
             mode: 'cors',
             method: "POST",
             headers: headers,
