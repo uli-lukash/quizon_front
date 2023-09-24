@@ -16,8 +16,8 @@ window.addEventListener("DOMContentLoaded", (event) => {
         while (i < arr.length) {
             if (arr[i].value == "") {
                 arr[i].style.borderColor="red";
-                i = i + 1;
             }
+            i = i + 1;
         }
 
         fetch("https://quiz-on.ru/register", {
