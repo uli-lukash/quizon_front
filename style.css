@@ -5,12 +5,16 @@
     --my-red: #9F2128;
 }
 
+main {
+    width: 100vw;
+}
+
 body {
     background-color: #030B18;
 }
 
 .form {
-    width: 304px;
+    width: 92vw;
     background-color: #0F1A2E;
     border-radius: 21px;
 }
@@ -37,12 +41,12 @@ body {
     font-weight: 700;
     color: var(--my-yellow);
     width: fit-content;
-    width: 256px;
+    width: 80vw;
 }
 
 .block_input {
     margin-top: 11px;
-    width: 256px;
+    width: 80vw;
     height: 51px;
 }
 
@@ -52,7 +56,7 @@ body {
     border: 1.33428px solid #CBA262;
     border-radius: 17.3457px;
 
-    width: 247px;
+    width: 80vw;
     height: 25px;
 
     font-family: 'Montserrat', sans-serif;
@@ -61,15 +65,15 @@ body {
 }
 
 .btn_container {
-    width: 256px;
+    width: 80vw;
     font-size: 12px;
     padding-bottom: 30px;
 }
 
 .error_output {
     margin-top: 12px;
-    width: 256px;
-    max-width: 256px;
+    width: 80vw;
+    max-width: 80vw;
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     text-wrap: wrap;
@@ -96,7 +100,7 @@ body {
     padding: 8px;
     margin-top: 6px;
     box-sizing: border-box;
-    width: 100%;
+    width: 80vw;
     height: 32px;
     border-radius: 12px;
     border-width: 2px;
@@ -108,7 +112,7 @@ body {
 .info {
     display: flex;
     margin-top: 11px;
-    width: 256px;
+    width: 80vw;
 }
 
 .info_clock {

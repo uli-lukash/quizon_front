@@ -9,9 +9,8 @@ window.addEventListener("DOMContentLoaded", (event) => {
         var phone = document.getElementById("phone")
         var team_name = document.getElementById("team_name")
         var team_size = document.getElementById("team_size")
-        var captain_name = document.getElementById("captain_name")
 
-        let arr = [captain_name, group, phone, team_name, team_size, captain_name];
+        let arr = [captain_name, group, phone, team_name, team_size];
         let i = 0;
         while (i < arr.length) {
             if (arr[i].value == "") {
@@ -19,28 +18,38 @@ window.addEventListener("DOMContentLoaded", (event) => {
             }
             i = i + 1;
         }
-
-        let headers = new Headers();
-
-        headers.append('Content-Type', 'application/json; harset=UTF-8');
-        headers.append('Accept', 'application/json');
-        headers.append('Origin','https://www.quiz-on.ru');
-
-        fetch("https://www.quiz-on.ru/register", {
-            mode: 'cors',
-            method: "POST",
-            headers: headers,
-            body: JSON.stringify({
-                userId: 1,
-                captain_name: captain_name.value,
-                group: group.value,
-                phone: phone.value,
-                team_name: team_name.value,
-                team_size: team_size.value,
-                cpatain_name: captain_name.value,
-            }),
-        })
-            .then((response) => response.json())
-            .then((json) => console.log(json));
+        try {
+            postData().then((response) => {
+                if (response.status !== 200) {
+                    alert("Код ответа НЕ 200!")
+                }
+            })
+        } catch (error) {
+            alert(error)
+        }
+        
     });
 });
+
+async function postData() {
+    const response = await fetch("https://www.quiz-on.ru/api/register", {
+        mode: 'cors',
+        method: "POST",
+        cache: "no-cache",
+        credentials: "same-origin",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        redirect: "follow",
+        referrerPolicy: "no-referrer",
+        body: JSON.stringify({
+            userId: 1,
+            captain_name: captain_name.value,
+            group: group.value,
+            phone: phone.value,
+            team_name: team_name.value,
+            team_size: team_size.value,
+        }),
+    })
+    return response;
+}
